@@ -3,13 +3,19 @@
 
 int main(){
 
-  int fac_r,bub_r,fib_r,pri_r;
+/*---- APP1 ----*/
+#ifdef APP1
+  int app1;
 
-#ifdef TMR
-  int i, reslt[TMR_LOOP],maj;
+  app1 = APP1;
+#ifdef SHOW_RESULT
+  printf("%s: %d\n",APP1_NAME, app1);
+#endif /* RESULT */
+#elif TMR_APP1
+  int i, reslt[TMR_APP1_LOOP],maj;
 
-  for(i=0; i<TMR_LOOP; i++){
-    reslt[i] = bubble_sort();
+  for(i=0; i<TMR_APP1_LOOP; i++){
+    reslt[i] = APP1;
   }
 
   // Voter
@@ -17,20 +23,85 @@ int main(){
   else if(reslt[0] == reslt[2]) maj = reslt[0];
   else maj = reslt[1];
 
-  bub_r = maj;
+#ifdef SHOW_RESULT
+  printf("%s: %d\n",APP1_NAME, maj);
+#endif /* RESULT */
+#endif /* APP1 */
 
-#endif /* TMR */
+/*---- APP2 ----*/
+#ifdef APP2
+  int app2;
 
-  fac_r = factorial();
-  bub_r = bubble_sort();
-  fib_r = fibonacci();
-  pri_r = prime();
+  app2 = APP2;
+#ifdef SHOW_RESULT
+  printf("%s: %d\n",APP2_NAME, app2);
+#endif /* RESULT */
+#elif TMR_APP2
+  int i, reslt[TMR_APP2_LOOP],maj;
+
+  for(i=0; i<TMR_APP2_LOOP; i++){
+    reslt[i] = APP2;
+  }
+
+  // Voter
+  if(reslt[0] == reslt[1])      maj = reslt[0];
+  else if(reslt[0] == reslt[2]) maj = reslt[0];
+  else maj = reslt[1];
 
 #ifdef SHOW_RESULT
-  printf("Factorial: %d\n", fac_r);
-  printf("Bubble:    %d\n", bub_r);
-  printf("Fibonacci: %d\n", fib_r);
-  printf("Prime:     %d\n", pri_r);
-#endif /* SHOW_RESULT */
+  printf("%s: %d\n",APP2_NAME, maj);
+#endif /* RESULT */
+#endif /* APP2 */
+
+/*---- APP3 ----*/
+#ifdef APP3
+  int app3;
+
+  app3 = APP3;
+#ifdef SHOW_RESULT
+  printf("%s: %d\n",APP3_NAME, app3);
+#endif /* RESULT */
+#elif TMR_APP3
+  int i, reslt[TMR_APP3_LOOP],maj;
+
+  for(i=0; i<TMR_APP3_LOOP; i++){
+    reslt[i] = APP3;
+  }
+
+  // Voter
+  if(reslt[0] == reslt[1])      maj = reslt[0];
+  else if(reslt[0] == reslt[2]) maj = reslt[0];
+  else maj = reslt[1];
+
+#ifdef SHOW_RESULT
+  printf("%s: %d\n",APP3_NAME, maj);
+#endif /* RESULT */
+#endif /* APP3 */
+
+/*---- APP4 ----*/
+#ifdef APP4
+  int app4;
+
+  app4 = APP4;
+#ifdef SHOW_RESULT
+  printf("%s: %d\n",APP4_NAME, app4);
+#endif /* RESULT */
+#elif TMR_APP4
+  int i, reslt[TMR_APP4_LOOP],maj;
+
+  for(i=0; i<TMR_APP4_LOOP; i++){
+    reslt[i] = APP4;
+  }
+
+  // Voter
+  if(reslt[0] == reslt[1])      maj = reslt[0];
+  else if(reslt[0] == reslt[2]) maj = reslt[0];
+  else maj = reslt[1];
+
+#ifdef SHOW_RESULT
+  printf("%s: %d\n",APP4_NAME, maj);
+#endif /* RESULT */
+#endif /* APP2 */
+
   return 0;
 }

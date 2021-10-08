@@ -37,7 +37,6 @@ int prime(){
   uint x =  21649;
   uint y = 513239;
   swap (&x, &y);
-  int b = calc_prime(x) && calc_prime(y);
 
   return !(calc_prime(x) && calc_prime(y));
 
