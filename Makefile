@@ -27,6 +27,7 @@ APP2_OBJ	= bubble_sort.o
 APP3_OBJ	= prime.o
 
 EXE = $(APP).$(CROSS).elf
+DUMP = $(patsubst %.elf, %.dump, $(EXE))
 
 # Compilation variables
 $(MAIN_OBJ)	: OPTIMIZATION := -O0
@@ -39,7 +40,11 @@ $(APP3_OBJ)	: OPTIMIZATION := -O2 #prime
 OBJ_FILES = $(MAIN_OBJ) $(APP0_OBJ) $(APP1_OBJ) $(APP2_OBJ) $(APP3_OBJ)
 SRC_FILES = $(patsubst %.o, %.c, $(OBJ_FILES))
 
-all: $(EXE)
+all: $(EXE) $(DUMP)
+
+%.dump: %.elf
+	$(V)  echo "# Dump $<"
+	$(V)  $(IMPERAS_OBJDUMP) -d $< > $@
 
 %.$(CROSS).elf: $(OBJ_FILES)
 	$(V)  echo "# Linking $@"
@@ -50,7 +55,7 @@ all: $(EXE)
 	$(V)  $(IMPERAS_CC) -Wall -g -c -o $@ $< $(OPTIMIZATION)
 
 clean:
-	-rm -f *.elf *.o
+	-rm -f *.elf *.o *.dump
 
 realclean: clean
 	-rm -f *.log

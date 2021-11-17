@@ -30,7 +30,7 @@ int main(){
 
 /*---- APP2 ----*/
 #ifdef APP2
-  int app2;
+  volatile int app2;
 
   app2 = APP2;
 #ifdef SHOW_RESULT

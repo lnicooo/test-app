@@ -13,14 +13,14 @@
 //#define TMR_APP1_LOOP 3
 
 /*---- APP2 -----*/
-#define APP2 fibonacci()
+#define APP2 prime()
 #define APP2_NAME "Fibonacci"
 /*---- TMR_APP2 -----*/
 //#define TMR_APP2
 //#define TMR_APP2_LOOP 3
 
 /*---- APP3 -----*/
-#define APP3 factorial
+#define APP3 factorial()
 #define APP3_NAME "Factorial"
 /*---- TMR_APP3 -----*/
 //#define TMR_APP3
